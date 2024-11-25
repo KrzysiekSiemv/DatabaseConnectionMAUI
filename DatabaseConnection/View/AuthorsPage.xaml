@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DatabaseConnection.View.AuthorsPage"
+             xmlns:vm="clr-namespace:DatabaseConnection.ViewModel"
+             Title="Autorzy książek">
+    <VerticalStackLayout>
+        <Button Command="{Binding LoadAuthorsCommand}" Text="Załaduj" />
+        <CollectionView ItemsSource="{Binding Authors}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="*,*,*,*">
+                        <Border StrokeThickness="1" Stroke="White" Grid.Column="0" Padding="4">
+                            <Label Text="{Binding Id}" />
+                        </Border>
+                        <Border StrokeThickness="1" Stroke="White" Grid.Column="1" Padding="4">
+                            <Label Text="{Binding Name}" />
+                        </Border>
+                        <Border StrokeThickness="1" Stroke="White" Grid.Column="2" Padding="4">
+                            <Label Text="{Binding Surname}" />
+                        </Border>
+                        <Border StrokeThickness="1" Stroke="White" Grid.Column="3" Padding="4">
+                            <Label Text="{Binding Birthdate}" />
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
